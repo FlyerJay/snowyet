@@ -1,22 +1,46 @@
-'use strict';
+const path = require('path');
+const fs = require('fs');
+module.exports = app => {
+  const exports = {};
 
-module.exports = appInfo => {
-  const config = exports = {};
+  exports.siteFile = {
+    '/favicon.ico': fs.readFileSync(path.join(app.baseDir, 'app/web/asset/images/favicon.ico'))
+  };
 
-  // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1509884402425_7074';
+  exports.view = {
+    cache: false
+  };
 
-  // add your config here
-  config.middleware = [];
+  exports.vuessr = {
+    layout: path.join(app.baseDir, 'app/web/view/layout.html'),
+    injectRes: [
+      // {
+      //  inline: true,
+      //  url: path.join(app.baseDir, 'app/web/framework/inject/inline.js')
+      // },
+      // {
+      //  inline: true,
+      //  manifest: true,
+      //  url: 'pack/inline.js'
+      // }
+    ]
+  };
 
-  config.sequelize = {
-    dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
-    database: 'blog',
-    host: '118.190.207.142',
-    port: '3306',
-    username: 'flyerjay',
-    password: '080728',
-  }
+  exports.logger = {
+    consoleLevel: 'DEBUG',
+    dir: path.join(app.baseDir, 'logs')
+  };
 
-  return config;
+  exports.static = {
+    prefix: '/public/',
+    dir: path.join(app.baseDir, 'public')
+  };
+
+  exports.keys = '123456';
+
+  exports.middleware = [
+    'access'
+  ];
+
+  return exports;
 };

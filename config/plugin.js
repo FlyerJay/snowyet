@@ -1,8 +1,11 @@
-'use strict';
+exports.static = true;
 
-// had enabled by egg
-// exports.static = true;
-exports.sequelize = {
-    enable: true,
-    package: 'egg-sequelize'
-}
+exports.vue = {
+  enable: true,
+  package: 'egg-view-vue'
+};
+
+exports.vuessr = {
+  enable: true,
+  package: 'egg-view-vue-ssr'
+};
