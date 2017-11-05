@@ -9,5 +9,14 @@ module.exports = appInfo => {
   // add your config here
   config.middleware = [];
 
+  config.sequelize = {
+    dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
+    database: 'blog',
+    host: '118.190.207.142',
+    port: '3306',
+    username: 'flyerjay',
+    password: '080728',
+  }
+
   return config;
 };
