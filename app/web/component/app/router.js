@@ -9,14 +9,10 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   mode: 'history',
-  base: '/app',
+  base: '',
   routes: [
     {
       path: '/',
-      component: ListView
-    },
-    {
-      path: '/list',
       component: ListView
     },
     {

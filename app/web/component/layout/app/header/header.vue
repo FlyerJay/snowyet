@@ -2,9 +2,7 @@
   <header class="header">
     <div class="container"><h1>
       <a href="" class="router-link-active">Egg + Vue</a></h1>
-      <ul class="nav">
-        <li class="nav-item"><a href="/app" :class="{'active' : selectedMenu === '/app'}">Single-Page</a></li>
-      </ul>
+      <ul class="nav"></ul>
     </div>
   </header>
 </template>
@@ -15,7 +13,7 @@
   export default{
     data(){
       return {
-        selectedMenu : '/app'
+        selectedMenu : ''
       }
     },
     computed:{
