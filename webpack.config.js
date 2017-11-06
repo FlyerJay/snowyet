@@ -11,7 +11,6 @@ module.exports = {
       server: 'app/web/framework/vue/entry/server-loader.js',
     },
     html: {
-      include: ['app/web/page/html', { 'element/front': 'app/web/page/html/element/front.js?loader=false' }],
       template: 'app/web/view/layout.html',
       buildDir: 'html',
       options: {}
