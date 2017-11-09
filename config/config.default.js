@@ -36,6 +36,15 @@ module.exports = app => {
     dir: path.join(app.baseDir, 'public')
   };
 
+  exports.sequelize = {
+    dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
+    database: 'snowyet',
+    host: '118.190.207.142',
+    port: '3306',
+    username: 'flyerjay',
+    password: '080728',
+  }
+
   exports.keys = '123456';
 
   exports.middleware = [
