@@ -6,6 +6,7 @@
 
 'use strict';
 //注意：实体的classmthods中不要出现sequelize中的保留方法，否则会覆盖保留方法如(create,update,destroy,find等);
+//复杂的业务逻辑卸载service中，classMethods只处理简单逻辑
 
 module.exports = app => {
     const { STRING, INTEGER, BIGINT } = app.Sequelize;
@@ -84,7 +85,7 @@ module.exports = app => {
         underscored:true,
         timestamps:false//sequelize V4不再支持classMethods的写法了,使用model.methods代替classMethods,model.prototype.methods代替instanceMthods，目的是为了兼容es6（are you ok?还是原来的写法好看）。
     });
-    
+
     User.login = async function (options) {
         if(!options.loginId) return {
             code: -1,

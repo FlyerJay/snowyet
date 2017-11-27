@@ -1,9 +1,7 @@
 import Vue from 'vue';
-
 import VueRouter from 'vue-router';
 
-import ListView from './list';
-import DetailView from './detail';
+import Index from './index';
 
 Vue.use(VueRouter);
 
@@ -13,11 +11,7 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      component: ListView
-    },
-    {
-      path: '/detail/:id',
-      component: DetailView
+      component: Index
     }
   ]
 });

@@ -3,9 +3,11 @@ import store from 'store/app';
 import router from 'component/app/router';
 import app from './app.vue';
 import App from 'app';
+import Components from 'framework/vue/component';
 import Layout from 'component/layout/app';
 
-App.component(Layout.name, Layout);
+App.use(Components);
+App.component(Layout.name,Layout);
 
 sync(store, router);
 
