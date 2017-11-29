@@ -1,6 +1,8 @@
 <template>
-    <div class="menu">
-        <div class="menu-item" v-for="item in menu" :class="'iconfont icon-'+item"></div>
+    <div class="menu clearfix">
+        <div class="menu-item" v-for="item in menu" :class="'iconfont icon-'+item">
+            <span v-if="item == '|'">|</span>
+        </div>
     </div>
 </template>
 <script>
@@ -26,6 +28,10 @@
         &::before{
             font-size: 18px;
             color: #666;
+        }
+        span{
+            font-size: 12px;
+            color: #ccc;
         }
     }
 </style>
